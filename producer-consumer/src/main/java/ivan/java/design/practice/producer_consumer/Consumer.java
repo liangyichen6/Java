@@ -1,5 +1,8 @@
 package ivan.java.design.practice.producer_consumer;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class Consumer {
 
 	private final ItemQueue queue;
@@ -14,5 +17,8 @@ public class Consumer {
 	public void consume() throws InterruptedException {
 
 		Item item = queue.take();
+		log.info("Consumer [{}] consume item [{}] produced by [{}]", name,
+				item.getId(), item.getProducer());
+
 	}
 }

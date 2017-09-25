@@ -1,7 +1,5 @@
 package ivan.java.design.practice.producer_consumer;
 
-import java.util.Random;
-
 public class Producer {
 
 	private final ItemQueue queue;
@@ -20,7 +18,8 @@ public class Producer {
 		Item item = new Item(name, itemId++);
 		queue.put(item);
 
-		Random random = new Random();
-		Thread.sleep(random.nextInt(2000));
+		// Random random = new Random();
+		// Thread.sleep(random.nextInt(2000));
+		Thread.sleep(5);
 	}
 }

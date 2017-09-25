@@ -4,10 +4,13 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Hello world!
  *
  */
+@Slf4j
 public class App {
 	public static void main(String[] args) {
 		ItemQueue queue = new ItemQueue();
@@ -38,7 +41,7 @@ public class App {
 			executorService.awaitTermination(10, TimeUnit.SECONDS);
 			executorService.shutdown();
 		} catch (InterruptedException e) {
-
+			log.error("Error waiting for ExecutorService shutdown");
 		}
 	}
 }
