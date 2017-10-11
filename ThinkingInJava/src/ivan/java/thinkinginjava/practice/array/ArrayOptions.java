@@ -6,6 +6,10 @@ import java.util.Arrays;
 
 public class ArrayOptions {
 
+	public static void handleArray(BerylliumSphere[] array) {
+		print(Arrays.toString(array));
+	}
+
 	public static void main(String[] args) {
 		BerylliumSphere[] a;
 		BerylliumSphere[] b = new BerylliumSphere[5];
@@ -18,43 +22,42 @@ public class ArrayOptions {
 			c[i] = new BerylliumSphere();
 		}
 
-		BerylliumSphere[] d = { new BerylliumSphere(), 
-				new BerylliumSphere(), new BerylliumSphere() };
-		
-		a = new BerylliumSphere[]{
-			new BerylliumSphere(), new BerylliumSphere()	
-		};
-		
+		BerylliumSphere[] d = { new BerylliumSphere(), new BerylliumSphere(), new BerylliumSphere() };
+
+		a = new BerylliumSphere[] { new BerylliumSphere(), new BerylliumSphere() };
+
 		print("a.length = " + a.length);
 		print("b.length = " + b.length);
 		print("c.length = " + c.length);
 		print("d.length = " + d.length);
-		
+
 		a = d;
-		
+
 		print("a.length = " + a.length);
-		
+
 		int[] e;
 		int[] f = new int[5];
-		
+
 		print("f: " + Arrays.toString(f));
 		int[] g = new int[4];
-		for(int i = 0; i<g.length; i++) {
-			g[i] = i*i;
+		for (int i = 0; i < g.length; i++) {
+			g[i] = i * i;
 		}
-		
-		int[] h = {11,47,93};
-		
+
+		int[] h = { 11, 47, 93 };
+
 		print("f.length = " + f.length);
 		print("g.length = " + g.length);
 		print("h.length = " + h.length);
-		
-		
+
 		e = h;
+
+		print("e.length = " + e.length);
+		e = new int[] { 1, 2 };
+		print("e.length = " + e.length);
 		
-		print("e.length = "+ e.length);
-		e = new int[]{1,2};
-		print("e.length = "+ e.length);
 		
+		handleArray(new BerylliumSphere[]{new BerylliumSphere()});
+
 	}
 }
